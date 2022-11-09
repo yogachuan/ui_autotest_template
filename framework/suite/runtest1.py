@@ -14,6 +14,7 @@ class Run:
 
     def main_test(self):
         self.__prepare()
+        
         self.run_test()
         self.__finish()
 
