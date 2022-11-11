@@ -1,5 +1,5 @@
 from framework.common.driver import Browser
-from framework.case.test_login import LoginTest
+from framework.case.test_login1 import LoginTest
 
 
 class Run:

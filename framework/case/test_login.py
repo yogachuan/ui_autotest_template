@@ -1,18 +1,25 @@
 from framework.page.login_obj import LoginObj
+import unittest
+from framework.common.driver import Browser
 
 
-class LoginTest:
-    '''登录测试'''
-    def __init__(self, dr):
-        self.login_obj = LoginObj(dr)
+class LoginTest(unittest.TestCase):
+    """登录测试"""
 
-    def __test_login(self):
-        self.login_obj.do_login("yujiachuan")
+    @classmethod
+    def setUpClass(cls) -> None:
+        pass
 
-    def main_test(self):
-        self.__test_login()
+    @classmethod
+    def tearDownClass(cls) -> None:
+        pass
 
+    def setUp(self) -> None:
+        self.dr = Browser.get_webdriver()
+        self.login_obj = LoginObj(self.dr)
 
-if __name__ == "__main__":
-    login = LoginTest()
-    login.test_login()
+    def tearDown(self) -> None:
+        self.dr.quit()
+
+    def test_login(self):
+        pass
