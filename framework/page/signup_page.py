@@ -1,5 +1,3 @@
-import time
-
 from framework.common.basepage import BasePage
 from selenium.webdriver.common.by import By
 import time
