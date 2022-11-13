@@ -42,15 +42,33 @@ class BasePage:
         try:
             return self.driver.find_element(*loc)
         except NoSuchElementException:
-            print('按钮未找到!')
+            self.logger.exception(f'查找"{screenMark}"元素失败,定位方式:{loc}')
+            # 截图
+            self.save_webImgs(f"查找元素[{screenMark}]异常")
+            raise
 
-    def find_elements(self):
+    def find_elements(self, loc, screenMark=None):
         """查找多个元素"""
-        pass
+        self.logger.info(f'查找"{screenMark}"元素集,定位方式:{loc}')
+        try:
+            return self.driver.find_element(*loc)
+        except NoSuchElementException:
+            self.logger.exception(f'查找"{screenMark}"元素集失败,定位方式:{loc}')
+            # 截图
+            self.save_webImgs(f"查找元素集[{screenMark}]异常")
+            raise
 
-    def click_ele(self):
+    def click_element(self, loc, screenMark=None):
         """点击元素"""
-        pass
+        ele = self.find_element(loc, screenMark)
+        self.logger.info(f'点击"{screenMark}",元素定位:{loc}')
+        try:
+            ele.click()
+        except:
+            self.logger.exception(f'"{screenMark}"点击失败')
+            # 截图
+            self.save_webImgs(f"[{screenMark}]点击异常")
+            raise
 
     def input_text(self, loc, text, screenMark=None):
         """输入框输入文本"""
@@ -59,11 +77,39 @@ class BasePage:
         try:
             ele.send_keys(text)
         except:
-            print('输入失败')
+            self.logger.exception(f'"{screenMark}"输入操作失败!')
+            # 截图
+            self.save_webImgs(f"[{screenMark}]输入异常")
+            raise
 
-    def clean_input(self):
+    def clean_input(self, loc, screenMark=None):
         """清空输入框"""
-        pass
+        ele = self.find_element(loc, screenMark)
+        # 清除操作
+        self.logger.info(f'清除"{screenMark}",元素定位:{loc}')
+        try:
+            ele.clear()
+        except:
+            self.logger.exception(f'"{screenMark}"清除操作失败')
+            # 截图
+            self.save_webImgs(f"[{screenMark}]清除异常")
+            raise
+
+    def get_text(self, loc, screenMark=None):
+        """获取文本内容"""
+        # 先查找元素在获取文本内容
+        ele = self.find_element(loc, screenMark)
+        # 获取文本
+        self.logger.info(f'获取"{screenMark}"元素文本内容，元素定位:{loc}')
+        try:
+            text = ele.text
+            self.logger.info(f'获取"{screenMark}"元素文本内容为"{text}",元素定位:{loc}')
+            return text
+        except:
+            self.logger.exception(f'获取"{screenMark}"元素文本内容失败,元素定位:{loc}')
+            # 截图
+            self.save_webImgs(f"获取[{screenMark}]文本内容异常")
+            raise
 
     def save_webImgs(self, screenMark=None):
         """

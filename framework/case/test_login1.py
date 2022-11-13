@@ -1,10 +1,10 @@
-from framework.page.login_obj import LoginObj
+from framework.page.signup_page import SignUpObj
 
 
 class LoginTest:
     """登录测试"""
     def __init__(self, dr):
-        self.login_obj = LoginObj(dr)
+        self.login_obj = SignUpObj(dr)
 
     def __test_login(self):
         self.login_obj.do_login("yujiachuan")
