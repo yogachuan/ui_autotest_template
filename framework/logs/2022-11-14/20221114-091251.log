@@ -1,0 +1,37 @@
+2022-11-14 09:12:51,183 - INFO read_data.py [line:23]: 加载 /Users/yoga/Desktop/练手/框架模板/framework/config/setting.json 文件......
+2022-11-14 09:12:51,186 - INFO read_data.py [line:26]: 读到数据 ==>>  {'browser_type': 'chrome', 'host': 'https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F', 'username': 'yoga', 'pwd': 'yoga'} 
+2022-11-14 09:12:51,186 - INFO test_signup.py [line:14]: class setup content
+2022-11-14 09:12:51,187 - INFO test_signup.py [line:21]: function setup content
+2022-11-14 09:12:54,210 - INFO driver.py [line:45]: 打开链接: https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F...
+2022-11-14 09:12:54,210 - INFO driver.py [line:46]: WebDriver 初始化完成！
+2022-11-14 09:12:54,210 - INFO signup_page.py [line:15]: 【===开始注册操作===】
+2022-11-14 09:12:54,210 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userNam')
+2022-11-14 09:13:25,877 - ERROR basepage.py [line:34]: 等待"等待用户名输入框"元素失败,定位方式:('id', 'TANGRAM__PSP_4__userNam')
+Traceback (most recent call last):
+  File "/Users/yoga/Desktop/练手/框架模板/framework/common/basepage.py", line 30, in wait_eleVisible
+    WebDriverWait(self.driver, timeout, poll_frequency).until(ec.visibility_of_element_located(loc))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/support/wait.py", line 90, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100952f44 chromedriver + 3813188
+1   chromedriver                        0x00000001008e4ae0 chromedriver + 3361504
+2   chromedriver                        0x00000001005e8c5c chromedriver + 232540
+3   chromedriver                        0x000000010061a380 chromedriver + 435072
+4   chromedriver                        0x0000000100647f44 chromedriver + 622404
+5   chromedriver                        0x000000010060f358 chromedriver + 389976
+6   chromedriver                        0x0000000100610284 chromedriver + 393860
+7   chromedriver                        0x0000000100926e18 chromedriver + 3632664
+8   chromedriver                        0x000000010092a97c chromedriver + 3647868
+9   chromedriver                        0x0000000100930b58 chromedriver + 3672920
+10  chromedriver                        0x000000010092b350 chromedriver + 3650384
+11  chromedriver                        0x00000001009088dc chromedriver + 3508444
+12  chromedriver                        0x0000000100945914 chromedriver + 3758356
+13  chromedriver                        0x0000000100945a78 chromedriver + 3758712
+14  chromedriver                        0x00000001009596cc chromedriver + 3839692
+15  libsystem_pthread.dylib             0x000000019c2d206c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000019c2cce2c thread_start + 8
+
+2022-11-14 09:13:26,833 - INFO basepage.py [line:132]: 截屏成功,图片路径为/Users/yoga/Desktop/练手/框架模板/framework/Screenshots\2022-11-14\等待元素[等待用户名输入框]出现异常_20221114_091325.png
+2022-11-14 09:13:26,833 - INFO test_signup.py [line:26]: function teardown content
+2022-11-14 09:13:26,907 - INFO test_signup.py [line:18]: Class teardown content

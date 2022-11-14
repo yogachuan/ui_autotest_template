@@ -1,0 +1,41 @@
+2022-11-14 09:25:20,457 - INFO read_data.py [line:23]: 加载 /Users/yoga/Desktop/练手/框架模板/framework/config/setting.json 文件......
+2022-11-14 09:25:20,459 - INFO read_data.py [line:26]: 读到数据 ==>>  {'browser_type': 'chrome', 'host': 'https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F', 'username': 'yoga', 'pwd': 'yoga'} 
+2022-11-14 09:25:20,460 - INFO test_signup.py [line:14]: class setup content
+2022-11-14 09:25:20,460 - INFO test_signup.py [line:21]: function setup content
+2022-11-14 09:25:23,355 - INFO driver.py [line:45]: 打开链接: https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F...
+2022-11-14 09:25:23,356 - INFO driver.py [line:46]: WebDriver 初始化完成！
+2022-11-14 09:25:23,356 - INFO signup_page.py [line:15]: 【===开始注册操作===】
+2022-11-14 09:25:23,356 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userNam')
+2022-11-14 09:25:33,387 - ERROR basepage.py [line:45]: 查找"清空用户名输入框"元素失败,定位方式:('id', 'TANGRAM__PSP_4__userNam')
+Traceback (most recent call last):
+  File "/Users/yoga/Desktop/练手/框架模板/framework/common/basepage.py", line 43, in find_element
+    return self.driver.find_element(*loc)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 856, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 243, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="TANGRAM__PSP_4__userNam"]"}
+  (Session info: chrome=107.0.5304.110)
+Stacktrace:
+0   chromedriver                        0x0000000100876f44 chromedriver + 3813188
+1   chromedriver                        0x0000000100808ae0 chromedriver + 3361504
+2   chromedriver                        0x000000010050cc5c chromedriver + 232540
+3   chromedriver                        0x000000010053e380 chromedriver + 435072
+4   chromedriver                        0x000000010056bf44 chromedriver + 622404
+5   chromedriver                        0x0000000100533358 chromedriver + 389976
+6   chromedriver                        0x0000000100534284 chromedriver + 393860
+7   chromedriver                        0x000000010084ae18 chromedriver + 3632664
+8   chromedriver                        0x000000010084e97c chromedriver + 3647868
+9   chromedriver                        0x0000000100854b58 chromedriver + 3672920
+10  chromedriver                        0x000000010084f350 chromedriver + 3650384
+11  chromedriver                        0x000000010082c8dc chromedriver + 3508444
+12  chromedriver                        0x0000000100869914 chromedriver + 3758356
+13  chromedriver                        0x0000000100869a78 chromedriver + 3758712
+14  chromedriver                        0x000000010087d6cc chromedriver + 3839692
+15  libsystem_pthread.dylib             0x000000019c2d206c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000019c2cce2c thread_start + 8
+
+2022-11-14 09:25:33,476 - INFO test_signup.py [line:26]: function teardown content
+2022-11-14 09:25:33,554 - INFO test_signup.py [line:18]: Class teardown content

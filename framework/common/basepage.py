@@ -117,16 +117,22 @@ class BasePage:
         :param screenMark: filepath = 指图片保存目录/screenMark(页面功能名称)_当前时间到秒.png
         :return:
         """
-        # 拼接日志文件夹，如果不存在则自动创建
+        # 拼接截图文件夹，如果不存在则自动创建
         cur_path = os.path.dirname(os.path.realpath(__file__))
-        now_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        screenshot_path = os.path.join(os.path.dirname(cur_path), f'Screenshots\\{now_date}')
+        screenshot_path = os.path.join(os.path.dirname(cur_path), f'screenshots')
         if not os.path.exists(screenshot_path):
             os.mkdir(screenshot_path)
+
+        # 日期文件夹
+        now_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        data_screenshot_path = os.path.join(os.path.dirname(cur_path), f'screenshots/{now_date}')
+        if not os.path.exists(data_screenshot_path):
+            os.mkdir(data_screenshot_path)
+
         # 当前时间
         dateNow = time.strftime('%Y%m%d_%H%M%S', time.localtime(time.time()))
         # 路径
-        filePath = '{}\\{}_{}.png'.format(screenshot_path, screenMark, dateNow)
+        filePath = '{}/{}_{}.png'.format(data_screenshot_path, screenMark, dateNow)
         try:
             self.driver.save_screenshot(filePath)
             self.logger.info(f"截屏成功,图片路径为{filePath}")
