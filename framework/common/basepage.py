@@ -1,7 +1,6 @@
 from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-from framework.common.driver import Browser
 from framework.common.logger import logger
 from datetime import datetime
 import os

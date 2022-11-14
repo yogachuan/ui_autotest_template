@@ -1,9 +1,7 @@
-import time
 from framework.page.signup_page import SignUpObj
 import unittest
 from framework.common.driver import Browser
 from framework.common.logger import logger
-from selenium.webdriver.common.by import By
 from ddt import ddt, data, unpack
 from framework.common.read_data import read_data
 import os

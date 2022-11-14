@@ -1,4 +1,3 @@
-import time
 from framework.common.read_data import read_data
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
