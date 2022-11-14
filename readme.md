@@ -1,4 +1,4 @@
-# python+selenium+unittest+ddt+HTMLTestRunner
+# python+selenium+unittest+ddt+HTMLTestRunner(以注册百度账号异常为例)
 
 ## 一、框架组成
 
