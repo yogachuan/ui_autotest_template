@@ -57,6 +57,7 @@ read_data.py
 ```python
 # -*- coding: utf-8 -*-
 import yaml
+import xlrd
 import json
 from configparser import ConfigParser
 from framework.common.logger import logger
@@ -99,7 +100,22 @@ class ReadFileData:
         data = dict(config_parser._sections)
         print("读到数据 ==>>  {} ".format(data))
         return data
-
+      
+    @staticmethod
+    def load_excel(file_path):
+        file = xlrd.open_workbook(file_path)
+        sheet = file.sheet_by_index(0)
+        data = []
+        for row in range(1, sheet.nrows):
+            lines = []
+            for col in range(1, sheet.ncols):
+                value = sheet.cell(row, col).value
+                if not isinstance(value, str):
+                    # 单元格内容不是字符串类型
+                    value = str(int(value))
+                lines.append(value)
+            data.append(lines)
+        return data
 
 read_data = ReadFileData()
 
@@ -360,12 +376,16 @@ class BasePage:
         :param screenMark: filepath = 指图片保存目录/screenMark(页面功能名称)_当前时间到秒.png
         :return:
         """
-        # 拼接日志文件夹，如果不存在则自动创建
         cur_path = os.path.dirname(os.path.realpath(__file__))
-        now_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        screenshot_path = os.path.join(os.path.dirname(cur_path), f'Screenshots\\{now_date}')
+        screenshot_path = os.path.join(os.path.dirname(cur_path), f'screenshots')
         if not os.path.exists(screenshot_path):
             os.mkdir(screenshot_path)
+
+        # 日期文件夹
+        now_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        data_screenshot_path = os.path.join(os.path.dirname(cur_path), f'screenshots/{now_date}')
+        if not os.path.exists(data_screenshot_path):
+            os.mkdir(data_screenshot_path)
         # 当前时间
         dateNow = time.strftime('%Y%m%d_%H%M%S', time.localtime(time.time()))
         # 路径
@@ -383,7 +403,9 @@ class BasePage:
 
 signup_page.py（继承自basepage），所以在实例化该类时需传入driver。
 
-​	页面对象分为三层：元素定位层、操作层、业务层（业务层方法需要以“do”开头，例如do_signup，业务层需要输入的内容以走形参）
+​	*1、页面对象分为三层：元素定位层、操作层、业务层（业务层方法需要以“do”开头，例如do_signup，业务层需要输入的内容以走形参）*
+
+​	*2、获取结果文本用于校验，将结果文本作为方法的返回（代码最后）*
 
 ```python
 from framework.common.basepage import BasePage
@@ -398,9 +420,12 @@ class SignUpObj(BasePage):
     phone_input = (By.ID, 'TANGRAM__PSP_4__phone')
     pwd_input = (By.ID, 'TANGRAM__PSP_4__password')
     signup_button = (By.ID, 'TANGRAM__PSP_4__submit')
+    ass_text = (By.CLASS_NAME, 'pass-confirmContent-msg')
+    cancel_button = (By.ID, 'TANGRAM__PSP_30__confirm_cancel')
 
     def do_signup(self, usr, phone, pwd):
         self.logger.info("【===开始注册操作===】")
+        time.sleep(3)
         self.wait_eleVisible(self.usr_input, screenMark='等待用户名输入框')
         self.clean_input(self.usr_input, screenMark='清空用户名输入框')
         self.input_text(self.usr_input, usr, screenMark='输入用户名')
@@ -414,8 +439,14 @@ class SignUpObj(BasePage):
         self.input_text(self.pwd_input, pwd, screenMark='输入密码')
 
         self.click_element(self.signup_button, screenMark='点击注册按钮')
-        self.logger.info("【===结束注册操作===】")
         time.sleep(2)
+        msg = self.get_text(self.ass_text,screenMark='提示框文本')
+        self.logger.info(f'获取到结果文本{msg}')
+        # self.refresh()
+        self.click_element(self.cancel_button, screenMark='点击取消按钮')
+        time.sleep(2)
+        self.logger.info("【===结束注册操作===】")
+        return msg
 ```
 
 ### 7、在case层中创建测试用例
@@ -441,16 +472,37 @@ test_signup.py（继承自unittest.TestCase）
 ​	4.*使用ddt将输入参数传入*
 
 ```python
+from ddt import ddt, data, unpack
+@ddt
+class AAA:
+  info = []
+  //info为数据列表，data方法可将info列表打散并传入test_aaa方法所需参数中
+  @data(*info)
+  @unpack()
+  def test_aaa(self,a,b,c):
+    
+```
+
+
+
+```python
 import time
 from framework.page.signup_page import SignUpObj
 import unittest
 from framework.common.driver import Browser
 from framework.common.logger import logger
 from selenium.webdriver.common.by import By
+from ddt import ddt, data, unpack
+from framework.common.read_data import read_data
+import os
 
 
+@ddt
 class SignUpTest(unittest.TestCase):
     """登录测试"""
+    base_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    userdata = read_data.load_excel(os.path.join(base_path, "data", "signup.xlsx"))
+    logger.info("add_user_data is {}".format(userdata))
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -469,13 +521,12 @@ class SignUpTest(unittest.TestCase):
         logger.info("function teardown content")
         self.dr.quit()
 
-    def test_login(self):
-        self.signup_obj.do_signup('yoga', '13292679672', 'y2571682')
-        time.sleep(3)
-        loc = (By.CLASS_NAME, 'pass-confirmContent-msg')
-        res = self.signup_obj.get_text(loc)
-        print(res)
-        self.assertIn('手机已sdfsdjh注册', res)
+    @data(*userdata)
+    @unpack
+    def test_signup(self, username, phone, pwd, ass):
+      	//将页面对象方法的返回用于校验
+        res = self.signup_obj.do_signup(username, phone, pwd)
+        self.assertIn(ass, res)
 
 
 if __name__ == '__main__':
