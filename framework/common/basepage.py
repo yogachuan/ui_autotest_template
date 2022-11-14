@@ -111,6 +111,11 @@ class BasePage:
             self.save_webImgs(f"获取[{screenMark}]文本内容异常")
             raise
 
+    def refresh(self, screenMark=None):
+        """刷新页面"""
+        self.logger.info(f'刷新{screenMark}')
+        self.driver.refresh()
+
     def save_webImgs(self, screenMark=None):
         """
         截图保存目录
@@ -138,4 +143,3 @@ class BasePage:
             self.logger.info(f"截屏成功,图片路径为{filePath}")
         except:
             self.logger.exception('截屏失败!')
-

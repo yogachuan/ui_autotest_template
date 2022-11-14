@@ -1,0 +1,46 @@
+2022-11-14 14:39:47,715 - INFO read_data.py [line:24]: 加载 /Users/yoga/Desktop/练手/框架模板/framework/config/setting.json 文件......
+2022-11-14 14:39:47,717 - INFO read_data.py [line:27]: 读到数据 ==>>  {'browser_type': 'chrome', 'host': 'https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F', 'username': 'yoga', 'pwd': 'yoga'} 
+2022-11-14 14:39:47,721 - INFO test_signup.py [line:17]: add_user_data is [['yoga', '13292679672', 'y1234567', '手机已注册'], ['yoga2', '13292679672', 'y1234568', '手机已注册']]
+2022-11-14 14:39:47,722 - INFO test_signup.py [line:21]: class setup content
+2022-11-14 14:39:47,722 - INFO test_signup.py [line:28]: function setup content
+2022-11-14 14:39:50,326 - INFO driver.py [line:45]: 打开链接: https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F...
+2022-11-14 14:39:50,326 - INFO driver.py [line:46]: WebDriver 初始化完成！
+2022-11-14 14:39:50,326 - INFO signup_page.py [line:17]: 【===开始注册操作===】
+2022-11-14 14:39:50,326 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2022-11-14 14:39:50,337 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.011111
+2022-11-14 14:39:50,337 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2022-11-14 14:39:50,339 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2022-11-14 14:39:50,352 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2022-11-14 14:39:50,354 - INFO basepage.py [line:76]: 在"输入用户名"输入"yoga",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2022-11-14 14:39:50,418 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2022-11-14 14:39:50,429 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.011363
+2022-11-14 14:39:50,429 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2022-11-14 14:39:50,432 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2022-11-14 14:39:50,446 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2022-11-14 14:39:50,448 - INFO basepage.py [line:76]: 在"输入手机号"输入"13292679672",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2022-11-14 14:39:50,479 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2022-11-14 14:39:50,488 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.008462
+2022-11-14 14:39:50,488 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2022-11-14 14:39:50,490 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2022-11-14 14:39:50,502 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2022-11-14 14:39:50,505 - INFO basepage.py [line:76]: 在"输入密码"输入"y1234567",元素定位:('id', 'TANGRAM__PSP_4__password')
+2022-11-14 14:39:50,536 - INFO basepage.py [line:41]: 查找"注册按钮"元素，元素定位:('id', 'TANGRAM__PSP_4__submit')
+2022-11-14 14:39:50,541 - INFO basepage.py [line:64]: 点击"注册按钮",元素定位:('id', 'TANGRAM__PSP_4__submit')
+2022-11-14 14:39:52,563 - INFO basepage.py [line:41]: 查找"提示框文本"元素，元素定位:('class name', 'pass-confirmContent-msg')
+2022-11-14 14:39:52,578 - INFO basepage.py [line:103]: 获取"提示框文本"元素文本内容，元素定位:('class name', 'pass-confirmContent-msg')
+2022-11-14 14:39:52,591 - INFO basepage.py [line:106]: 获取"提示框文本"元素文本内容为"该手机已注册，可以通过密码或扫码方式登录。",元素定位:('class name', 'pass-confirmContent-msg')
+2022-11-14 14:39:52,592 - INFO signup_page.py [line:33]: 获取到结果文本该手机已注册，可以通过密码或扫码方式登录。
+2022-11-14 14:39:52,592 - INFO basepage.py [line:116]: 刷新None
+2022-11-14 14:39:53,384 - INFO signup_page.py [line:37]: 【===结束注册操作===】
+2022-11-14 14:39:53,384 - INFO test_signup.py [line:33]: function teardown content
+2022-11-14 14:39:53,452 - INFO test_signup.py [line:28]: function setup content
+2022-11-14 14:39:53,452 - INFO signup_page.py [line:17]: 【===开始注册操作===】
+2022-11-14 14:39:53,452 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2022-11-14 14:39:53,454 - WARNING connectionpool.py [line:812]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106223400>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e9d225c76439ec0538a3861292bbd60/element
+2022-11-14 14:39:53,456 - WARNING connectionpool.py [line:812]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062235b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e9d225c76439ec0538a3861292bbd60/element
+2022-11-14 14:39:53,458 - WARNING connectionpool.py [line:812]: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106223820>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e9d225c76439ec0538a3861292bbd60/element
+2022-11-14 14:39:53,460 - INFO test_signup.py [line:33]: function teardown content
+2022-11-14 14:39:53,460 - WARNING connectionpool.py [line:812]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106223b50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e9d225c76439ec0538a3861292bbd60
+2022-11-14 14:39:53,461 - WARNING connectionpool.py [line:812]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106223d60>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e9d225c76439ec0538a3861292bbd60
+2022-11-14 14:39:53,461 - WARNING connectionpool.py [line:812]: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106223e80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e9d225c76439ec0538a3861292bbd60
+2022-11-14 14:39:53,468 - INFO test_signup.py [line:25]: Class teardown content

@@ -1,5 +1,6 @@
 import os
 import time
+from framework.common.read_data import read_data
 
 
 def aaa():
@@ -15,5 +16,12 @@ def aaa():
         os.mkdir(data_screenshot_path)
 
 
+def bbb():
+    base_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    print(base_path)
+    userdata = read_data.load_excel(os.path.join(base_path, "data", "signup.xlsx"))
+    print(userdata)
+
+
 if __name__ == '__main__':
-    aaa()
+    bbb()
