@@ -51,7 +51,7 @@ class ReadFileData:
         data = []
         for row in range(1, sheet.nrows):
             lines = []
-            for col in range(1, sheet.ncols):
+            for col in range(sheet.ncols):
                 value = sheet.cell(row, col).value
                 if not isinstance(value, str):
                     # 单元格内容不是字符串类型

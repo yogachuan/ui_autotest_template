@@ -1,11 +1,10 @@
 from framework.page.signup_page import SignUpObj
 import unittest
 from framework.common.driver import Browser
-from framework.common.logger import logger
 from ddt import ddt, data, unpack
 from framework.common.read_data import read_data
 import os
-
+from framework.common.logger import logger
 
 @ddt
 class SignUpTest(unittest.TestCase):
@@ -33,7 +32,8 @@ class SignUpTest(unittest.TestCase):
 
     @data(*userdata)
     @unpack
-    def test_signup(self, username, phone, pwd, ass):
+    def test_signup(self, case, desc, username, phone, pwd, ass):
+        logger.info(f'执行测试用例:{case},用例说明:{desc}')
         res = self.signup_obj.do_signup(username, phone, pwd)
         self.assertIn(ass, res)
 
