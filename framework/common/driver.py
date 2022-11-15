@@ -40,7 +40,7 @@ class Browser:
             else:
                 print('浏览器类型不支持')
                 logger.info("浏览器类型不支持")
-            if case is 'notLogin':
+            if case == 'notLogin':
                 # 不是登录测试用例则需进行登录操作
                 Browser.login()
             else:
