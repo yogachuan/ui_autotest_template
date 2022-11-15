@@ -30,13 +30,12 @@ class SignUpTest(unittest.TestCase):
 
     def tearDown(self) -> None:
         logger.info("function teardown content")
-        # self.dr.quit()
 
     @data(*userdata)
     @unpack
     def test_signup(self, username, phone, pwd, ass):
         res = self.signup_obj.do_signup(username, phone, pwd)
-        self.assertTrue(res)
+        self.assertIn(ass, res)
 
 
 if __name__ == '__main__':

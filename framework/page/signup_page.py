@@ -11,9 +11,8 @@ class SignUpObj(BasePage):
     pwd_input = (By.ID, 'TANGRAM__PSP_4__password')
     code_input = (By.ID, 'TANGRAM__PSP_4__verifyCode')
     signup_button = (By.ID, 'TANGRAM__PSP_4__submit')
-    ass_text = (By.CLASS_NAME, 'pass-confirmContent-msg')
+    ass_text = (By.CLASS_NAME, 'pwd-strength-detail')
     cancel_button = (By.ID, 'TANGRAM__PSP_30__confirm_cancel')
-    text = (By.XPATH, "//span[text()='密码设置不符合要求']")
 
     def do_signup(self, usr, phone, pwd):
         self.logger.info("【===开始注册操作===】")
@@ -30,9 +29,9 @@ class SignUpObj(BasePage):
         self.input_text(self.pwd_input, pwd, screenMark='输入密码')
 
         self.click_element(self.code_input, screenMark='点击注册输入框')
-        flag = self.find_element(self.text, screenMark='预期结果').is_displayed()
+        msg = self.get_text(self.ass_text, screenMark='获取断言文本')
         time.sleep(1)
         self.logger.info("【===结束注册操作===】")
-        return flag
+        return msg
 
 
