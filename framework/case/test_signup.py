@@ -17,25 +17,26 @@ class SignUpTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         logger.info("class setup content")
+        cls.dr = Browser.get_webdriver()
 
     @classmethod
     def tearDownClass(cls) -> None:
         logger.info("Class teardown content")
+        cls.dr.quit()
 
     def setUp(self) -> None:
         logger.info("function setup content")
-        self.dr = Browser.get_webdriver()
         self.signup_obj = SignUpObj(self.dr)
 
     def tearDown(self) -> None:
         logger.info("function teardown content")
-        self.dr.quit()
+        # self.dr.quit()
 
     @data(*userdata)
     @unpack
     def test_signup(self, username, phone, pwd, ass):
         res = self.signup_obj.do_signup(username, phone, pwd)
-        self.assertIn(ass, res)
+        self.assertTrue(res)
 
 
 if __name__ == '__main__':

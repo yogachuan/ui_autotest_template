@@ -1,0 +1,9 @@
+2022-11-15 09:21:11,067 - INFO read_data.py [line:24]: 加载 /Users/yoga/Desktop/练手/框架模板/framework/config/setting.json 文件......
+2022-11-15 09:21:11,072 - INFO read_data.py [line:27]: 读到数据 ==>>  {'browser_type': 'chrome', 'host': 'https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F', 'username': 'yoga', 'pwd': 'yoga'} 
+2022-11-15 09:21:11,088 - INFO test_signup.py [line:15]: add_user_data is [['yoga', '17274810086', 'y123456', '手机已注册'], ['yoga2', '17274810086', 'y12345', '手机已注册']]
+2022-11-15 09:21:11,089 - INFO test_signup.py [line:19]: class setup content
+2022-11-15 09:21:11,089 - INFO test_signup.py [line:27]: function setup content
+2022-11-15 09:21:11,091 - INFO test_signup.py [line:27]: function setup content
+2022-11-15 09:21:11,091 - INFO test_signup.py [line:23]: Class teardown content
+2022-11-15 09:21:13,497 - INFO driver.py [line:44]: 打开链接: https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F...
+2022-11-15 09:21:13,498 - INFO driver.py [line:45]: WebDriver 初始化完成！
