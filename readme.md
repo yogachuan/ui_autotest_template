@@ -419,13 +419,13 @@ class SignUpObj(BasePage):
     usr_input = (By.ID, 'TANGRAM__PSP_4__userName')
     phone_input = (By.ID, 'TANGRAM__PSP_4__phone')
     pwd_input = (By.ID, 'TANGRAM__PSP_4__password')
+    code_input = (By.ID, 'TANGRAM__PSP_4__verifyCode')
     signup_button = (By.ID, 'TANGRAM__PSP_4__submit')
-    ass_text = (By.CLASS_NAME, 'pass-confirmContent-msg')
+    ass_text = (By.CLASS_NAME, 'pwd-strength-detail')
     cancel_button = (By.ID, 'TANGRAM__PSP_30__confirm_cancel')
 
     def do_signup(self, usr, phone, pwd):
         self.logger.info("【===开始注册操作===】")
-        time.sleep(3)
         self.wait_eleVisible(self.usr_input, screenMark='等待用户名输入框')
         self.clean_input(self.usr_input, screenMark='清空用户名输入框')
         self.input_text(self.usr_input, usr, screenMark='输入用户名')
@@ -438,13 +438,9 @@ class SignUpObj(BasePage):
         self.clean_input(self.pwd_input, screenMark='清空密码输入框')
         self.input_text(self.pwd_input, pwd, screenMark='输入密码')
 
-        self.click_element(self.signup_button, screenMark='点击注册按钮')
-        time.sleep(2)
-        msg = self.get_text(self.ass_text,screenMark='提示框文本')
-        self.logger.info(f'获取到结果文本{msg}')
-        # self.refresh()
-        self.click_element(self.cancel_button, screenMark='点击取消按钮')
-        time.sleep(2)
+        self.click_element(self.code_input, screenMark='点击注册输入框')
+        msg = self.get_text(self.ass_text, screenMark='获取断言文本')
+        time.sleep(1)
         self.logger.info("【===结束注册操作===】")
         return msg
 ```
@@ -457,7 +453,7 @@ test_signup.py（继承自unittest.TestCase）
 
 ​	1.*setUpClass、tearDownClass、setUp、tearDown细读*
 
-​	2.*在setup中调用浏览器（调用时需判断用例是不是登录测试用例），并实例化页面对象，实例化时传入该浏览器*
+​	2.*在setUpClass中调用浏览器（调用时需判断用例是不是登录测试用例），并实例化页面对象，实例化时传入该浏览器*
 
 ​			登录用例：
 
@@ -466,6 +462,8 @@ test_signup.py（继承自unittest.TestCase）
 ​			非登录用例：
 
 ​				*Browser.get_driver()*
+
+​	3.在tearDownClass中退出浏览器
 
 ​	3.*test_login，真正执行用例的地方，必须以“test_”开头*
 
@@ -486,12 +484,10 @@ class AAA:
 
 
 ```python
-import time
 from framework.page.signup_page import SignUpObj
 import unittest
 from framework.common.driver import Browser
 from framework.common.logger import logger
-from selenium.webdriver.common.by import By
 from ddt import ddt, data, unpack
 from framework.common.read_data import read_data
 import os
@@ -507,24 +503,23 @@ class SignUpTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         logger.info("class setup content")
+        cls.dr = Browser.get_webdriver()
 
     @classmethod
     def tearDownClass(cls) -> None:
         logger.info("Class teardown content")
+        cls.dr.quit()
 
     def setUp(self) -> None:
         logger.info("function setup content")
-        self.dr = Browser.get_webdriver()
         self.signup_obj = SignUpObj(self.dr)
 
     def tearDown(self) -> None:
         logger.info("function teardown content")
-        self.dr.quit()
 
     @data(*userdata)
     @unpack
     def test_signup(self, username, phone, pwd, ass):
-      	//将页面对象方法的返回用于校验
         res = self.signup_obj.do_signup(username, phone, pwd)
         self.assertIn(ass, res)
 
@@ -534,5 +529,6 @@ if __name__ == '__main__':
     suite.addTest(SignUpTest())
     runner = unittest.TextTestRunner
     test_res = runner.run(suite)
+
 ```
 
