@@ -40,21 +40,22 @@ class Browser:
             else:
                 print('浏览器类型不支持')
                 logger.info("浏览器类型不支持")
-            cls.driver.get(host)
-            logger.info(f"打开链接: {host}...")
-            logger.info("WebDriver 初始化完成！")
-            # if case is 'notLogin':
-            #     # 不是登录测试用例则需进行登录操作
-            #     Browser.login()
-            #     time.sleep(3)
-            # else:
-            #     # 登录测试用例需执行
-            #     cls.driver.get(host)
+            if case is 'notLogin':
+                # 不是登录测试用例则需进行登录操作
+                Browser.login()
+            else:
+                # 登录测试用例需执行
+                cls.driver.get(host)
+                logger.info(f"打开链接: {host}...")
+                logger.info("WebDriver 初始化完成！")
         return cls.driver
 
     @classmethod
     def login(cls):
+        logger.info(f'非登录类测试用例需先进行登录操作')
         cls.driver.get(host)
+        logger.info(f"打开链接: {host}...")
+        logger.info("WebDriver 初始化完成！")
         cls.driver.find_element(By.ID, '').send_keys(username)
         cls.driver.find_element(By.ID, '').send_keys(pwd)
         cls.driver.find_element(By.ID, '').click()

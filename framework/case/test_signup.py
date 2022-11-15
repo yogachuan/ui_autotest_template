@@ -16,7 +16,7 @@ class SignUpTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         logger.info("class setup content")
-        cls.dr = Browser.get_webdriver()
+        cls.dr = Browser.get_webdriver(case='Login')
 
     @classmethod
     def tearDownClass(cls) -> None:
