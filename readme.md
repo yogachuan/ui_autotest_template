@@ -1,5 +1,7 @@
 # python+selenium+unittest+ddt+HTMLTestRunner(以注册百度账号异常为例)
 
+*如下代码只是举例，具体以仓库代码为准*
+
 ## 一、框架组成
 
 - driver
