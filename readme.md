@@ -197,6 +197,12 @@ class Browser:
         cls.driver.find_element(By.ID, '').send_keys(username)
         cls.driver.find_element(By.ID, '').send_keys(pwd)
         cls.driver.find_element(By.ID, '').click()
+    
+    @classmethod
+    def quit_driver(cls):
+        if cls.driver:
+            cls.driver.quit()
+            cls.driver = None
 ```
 
 ### 4、在common层中创建写日志方法
@@ -465,7 +471,15 @@ test_signup.py（继承自unittest.TestCase）
 
 ​				*Browser.get_driver()*
 
-​	3.在tearDownClass中退出浏览器
+​	3.在tearDownClass中退出浏览器，注意：				
+
+```
+不能使用cls.dr.quit(), 需在Browser下封装quit_driver()方法
+因为使用cls.dr.quit()后,driver并不等于None,需调用Browser下的quit_driver()方法,重新将driver=None
+使用cls.dr.quit()执行完第一条用例执行完后，浏览器退出但是driver不为None，则执行下一条用例时无法启动浏览器
+```
+
+
 
 ​	3.*test_login，真正执行用例的地方，必须以“test_”开头*
 
@@ -483,8 +497,6 @@ class AAA:
     
 ```
 
-
-
 ```python
 from framework.page.signup_page import SignUpObj
 import unittest
@@ -497,40 +509,40 @@ import os
 
 @ddt
 class SignUpTest(unittest.TestCase):
-    """登录测试"""
-    base_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-    userdata = read_data.load_excel(os.path.join(base_path, "data", "signup.xlsx"))
-    logger.info("add_user_data is {}".format(userdata))
+  """登录测试"""
+  base_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+  userdata = read_data.load_excel(os.path.join(base_path, "data", "signup.xlsx"))
+  logger.info("add_user_data is {}".format(userdata))
 
-    @classmethod
-    def setUpClass(cls) -> None:
-        logger.info("class setup content")
-        cls.dr = Browser.get_webdriver()
+  @classmethod
+  def setUpClass(cls) -> None:
+    logger.info("class setup content")
+    cls.dr = Browser.get_webdriver()
 
-    @classmethod
-    def tearDownClass(cls) -> None:
-        logger.info("Class teardown content")
-        cls.dr.quit()
+  @classmethod
+  def tearDownClass(cls) -> None:
+    logger.info("Class teardown content")
+    Browser.quit_driver()
 
-    def setUp(self) -> None:
-        logger.info("function setup content")
-        self.signup_obj = SignUpObj(self.dr)
+  def setUp(self) -> None:
+    logger.info("function setup content")
+    self.signup_obj = SignUpObj(self.dr)
 
-    def tearDown(self) -> None:
-        logger.info("function teardown content")
+  def tearDown(self) -> None:
+    logger.info("function teardown content")
 
-    @data(*userdata)
-    @unpack
-    def test_signup(self, username, phone, pwd, ass):
-        res = self.signup_obj.do_signup(username, phone, pwd)
-        self.assertIn(ass, res)
+  @data(*userdata)
+  @unpack
+  def test_signup(self, username, phone, pwd, ass):
+    res = self.signup_obj.do_signup_fail(username, phone, pwd)
+    self.assertIn(ass, res)
 
 
 if __name__ == '__main__':
-    suite = unittest.TestSuite()
-    suite.addTest(SignUpTest())
-    runner = unittest.TextTestRunner
-    test_res = runner.run(suite)
+  suite = unittest.TestSuite()
+  suite.addTest(SignUpTest())
+  runner = unittest.TextTestRunner
+  test_res = runner.run(suite)
 
 ```
 

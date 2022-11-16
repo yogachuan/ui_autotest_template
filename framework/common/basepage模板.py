@@ -172,7 +172,7 @@ class BasePage(object):
             self.save_webImgs(f"iframe切换异常")
             raise
 
-    def switch_defaultcontext(self):
+    def switch_default_content(self):
         self.logger.info('切换到frame之外')
         self.driver.switch_to.default_content()
 

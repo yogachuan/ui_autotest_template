@@ -6,6 +6,7 @@ from framework.common.read_data import read_data
 import os
 from framework.common.logger import logger
 
+
 @ddt
 class SignUpTest(unittest.TestCase):
     """登录测试"""
@@ -21,7 +22,9 @@ class SignUpTest(unittest.TestCase):
     @classmethod
     def tearDownClass(cls) -> None:
         logger.info("Class teardown content")
-        cls.dr.quit()
+        # 不能使用cls.dr.quit(), 需在Browser下封装quit_driver()方法
+        # 因为使用cls.dr.quit()后,driver并不等于None,需调用Browser下的quit_driver()方法,重新将driver=None
+        Browser.quit_driver()
 
     def setUp(self) -> None:
         logger.info("function setup content")
@@ -32,9 +35,9 @@ class SignUpTest(unittest.TestCase):
 
     @data(*userdata)
     @unpack
-    def test_signup(self, case, desc, username, phone, pwd, ass):
+    def test_signup_fail(self, case, desc, username, phone, pwd, ass):
         logger.info(f'执行测试用例:{case},用例说明:{desc}')
-        res = self.signup_obj.do_signup(username, phone, pwd)
+        res = self.signup_obj.do_signup_fail(username, phone, pwd)
         self.assertIn(ass, res)
 
 

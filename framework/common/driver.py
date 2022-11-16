@@ -60,5 +60,11 @@ class Browser:
         cls.driver.find_element(By.ID, '').send_keys(pwd)
         cls.driver.find_element(By.ID, '').click()
 
+    @classmethod
+    def quit_driver(cls):
+        if cls.driver:
+            cls.driver.quit()
+            cls.driver = None
+
 
 
