@@ -482,11 +482,11 @@ test_signup.py（继承自unittest.TestCase）
 使用cls.dr.quit()执行完第一条用例执行完后，浏览器退出但是driver不为None，则执行下一条用例时无法启动浏览器
 ```
 
+​	<!--在setupClass还是setUp中初始化浏览器均可，根据业务流程进行选择-->
 
+​	4.*test_login，真正执行用例的地方，必须以“test_”开头*
 
-​	3.*test_login，真正执行用例的地方，必须以“test_”开头*
-
-​	4.*使用ddt将输入参数传入*
+​	5.*使用ddt将输入参数传入*
 
 ```python
 from ddt import ddt, data, unpack
