@@ -1,0 +1,31 @@
+2022-11-13 21:20:05,024 - INFO read_data.py [line:23]: 加载 /Users/yoga/Desktop/练手/框架模板/framework/config/setting.json 文件......
+2022-11-13 21:20:05,030 - INFO read_data.py [line:26]: 读到数据 ==>>  {'browser_type': 'chrome', 'host': 'http://www.baidu.com', 'username': 'yoga', 'pwd': 'yoga'} 
+2022-11-13 21:20:09,685 - INFO login_obj.py [line:15]: 【===开始登录操作===】
+2022-11-13 21:20:09,686 - INFO basepage.py [line:27]: 等待"等待关键字输入框"元素,定位方式:('id', 'kw')
+2022-11-13 21:20:41,314 - ERROR basepage.py [line:34]: 等待"等待关键字输入框"元素失败,定位方式:('id', 'kw')
+Traceback (most recent call last):
+  File "/Users/yoga/Desktop/练手/框架模板/framework/common/basepage.py", line 30, in wait_eleVisible
+    WebDriverWait(self.driver, timeout, poll_frequency).until(ec.visibility_of_element_located(loc))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/support/wait.py", line 90, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e62f44 chromedriver + 3813188
+1   chromedriver                        0x0000000104df4ae0 chromedriver + 3361504
+2   chromedriver                        0x0000000104af8c5c chromedriver + 232540
+3   chromedriver                        0x0000000104b2a380 chromedriver + 435072
+4   chromedriver                        0x0000000104b57f44 chromedriver + 622404
+5   chromedriver                        0x0000000104b1f358 chromedriver + 389976
+6   chromedriver                        0x0000000104b20284 chromedriver + 393860
+7   chromedriver                        0x0000000104e36e18 chromedriver + 3632664
+8   chromedriver                        0x0000000104e3a97c chromedriver + 3647868
+9   chromedriver                        0x0000000104e40b58 chromedriver + 3672920
+10  chromedriver                        0x0000000104e3b350 chromedriver + 3650384
+11  chromedriver                        0x0000000104e188dc chromedriver + 3508444
+12  chromedriver                        0x0000000104e55914 chromedriver + 3758356
+13  chromedriver                        0x0000000104e55a78 chromedriver + 3758712
+14  chromedriver                        0x0000000104e696cc chromedriver + 3839692
+15  libsystem_pthread.dylib             0x000000019c2d206c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000019c2cce2c thread_start + 8
+
+2022-11-13 21:20:41,541 - INFO basepage.py [line:86]: 截屏成功,图片路径为/Users/yoga/Desktop/练手/框架模板/framework/Screenshots\2022-11-13\等待元素[等待关键字输入框]出现异常_20221113_212041.png

@@ -12,7 +12,7 @@ class SignUpTest(unittest.TestCase):
     """登录测试"""
     base_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     userdata = read_data.load_excel(os.path.join(base_path, "data", "signup.xlsx"))
-    logger.info("add_user_data is {}".format(userdata))
+    logger.info("signup_data is {}".format(userdata))
 
     @classmethod
     def setUpClass(cls) -> None:

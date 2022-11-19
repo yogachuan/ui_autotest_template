@@ -142,3 +142,25 @@ class BasePage:
             self.logger.info(f"截屏成功,图片路径为{filePath}")
         except:
             self.logger.exception('截屏失败!')
+
+    def switch_iframe(self, frame_refer, timeout=30, poll_frequency=0.5, screenMark=None):
+        # 等待 iframe 存在
+        self.logger.info('iframe 切换操作:')
+        try:
+            # 切换 == index\name\id\WebElement
+            WebDriverWait(self.driver, timeout, poll_frequency).until(
+                ec.frame_to_be_available_and_switch_to_it(frame_refer))
+            time.sleep(0.5)
+            self.logger.info('切换成功')
+        except:
+            self.logger.exception('iframe 切换失败!!!')
+            # 截图
+            self.save_webImgs(f"iframe切换异常")
+            raise
+
+    def switch_default_content(self):
+        self.logger.info('切换到默认frame')
+        self.driver.switch_to.default_content()
+
+
+

@@ -1,0 +1,7 @@
+2022-11-13 21:22:01,843 - INFO read_data.py [line:23]: 加载 /Users/yoga/Desktop/练手/框架模板/framework/config/setting.json 文件......
+2022-11-13 21:22:01,846 - INFO read_data.py [line:26]: 读到数据 ==>>  {'browser_type': 'chrome', 'host': 'http://www.baidu.com', 'username': 'yoga', 'pwd': 'yoga'} 
+2022-11-13 21:22:08,771 - INFO login_obj.py [line:15]: 【===开始登录操作===】
+2022-11-13 21:22:08,772 - INFO basepage.py [line:27]: 等待"等待关键字输入框"元素,定位方式:('id', 'kw')
+2022-11-13 21:22:08,810 - INFO basepage.py [line:32]: 等待"等待关键字输入框"时长:0:00:00.037436
+2022-11-13 21:22:08,810 - INFO basepage.py [line:41]: 查找"输入关键字"元素，元素定位:('id', 'kw')
+2022-11-13 21:22:08,814 - INFO basepage.py [line:58]: 在"输入关键字"输入"yujiachuan",元素定位:('id', 'kw')
