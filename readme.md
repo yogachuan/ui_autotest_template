@@ -187,8 +187,8 @@ class Browser:
             else:
                 # 登录测试用例需执行
                 cls.driver.get(host)
-            logger.info(f"打开链接: {host}...")
-            logger.info("WebDriver 初始化完成！")
+            		logger.info(f"打开链接: {host}...")
+            		logger.info("WebDriver 初始化完成！")
         return cls.driver
 
     @classmethod
@@ -464,7 +464,7 @@ test_signup.py（继承自unittest.TestCase）
 
 ​	1.*setUpClass、tearDownClass、setUp、tearDown细读*
 
-​	2.*在setUpClass中调用浏览器（调用时需判断用例是不是登录测试用例），并实例化页面对象，实例化时传入该浏览器*
+​	2.*在setUp中调用浏览器（调用时需判断用例是不是登录测试用例），并实例化页面对象，实例化时传入该浏览器*
 
 ​			登录用例：
 
@@ -474,7 +474,7 @@ test_signup.py（继承自unittest.TestCase）
 
 ​				*Browser.get_driver()*
 
-​	3.在tearDownClass中退出浏览器，注意：				
+​	3.在tearDown中退出浏览器，注意：				
 
 ```
 不能使用cls.dr.quit(), 需在Browser下封装quit_driver()方法
@@ -482,7 +482,7 @@ test_signup.py（继承自unittest.TestCase）
 使用cls.dr.quit()执行完第一条用例执行完后，浏览器退出但是driver不为None，则执行下一条用例时无法启动浏览器
 ```
 
-​	<!--在setupClass还是setUp中初始化浏览器均可，根据业务流程进行选择-->
+​	<!--在setupClass还是setUp中初始化浏览器均可，根据业务流程进行选择，最好是setUp中初始化浏览器-->
 
 ​	4.*test_login，真正执行用例的地方，必须以“test_”开头*
 
