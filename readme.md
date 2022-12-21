@@ -544,7 +544,7 @@ class SignUpTest(unittest.TestCase):
 if __name__ == '__main__':
   suite = unittest.TestSuite()
   suite.addTest(SignUpTest())
-  runner = unittest.TextTestRunner
+  runner = unittest.TextTestRunner()
   test_res = runner.run(suite)
 
 ```
