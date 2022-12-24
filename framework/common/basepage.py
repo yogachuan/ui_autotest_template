@@ -5,6 +5,7 @@ from framework.common.logger import logger
 from datetime import datetime
 import os
 import time
+from selenium.webdriver.support.select import Select
 
 
 class BasePage:
@@ -145,7 +146,7 @@ class BasePage:
 
     def switch_iframe(self, frame_refer, timeout=30, poll_frequency=0.5, screenMark=None):
         # 等待 iframe 存在
-        self.logger.info('iframe 切换操作:')
+        self.logger.info(f'iframe 切换操作:切换至[{screenMark}]')
         try:
             # 切换 == index\name\id\WebElement
             WebDriverWait(self.driver, timeout, poll_frequency).until(
@@ -162,5 +163,35 @@ class BasePage:
         self.logger.info('切换到默认frame')
         self.driver.switch_to.default_content()
 
+    def select_by_value(self, loc, value, screenMark=None):
+        """select选择框通过value选择"""
+        ele = self.find_element(loc, screenMark)
+        self.logger.info(f'{screenMark}选择{value}')
+        try:
+            Select(ele).select_by_value(value)
 
+        except:
+            self.logger.info(f'{screenMark}选择失败')
+            self.save_webImgs(f'{screenMark}选择失败')
+            raise
+
+    def execute_js(self, js: str, params: dict = None, screenMark=None):
+        """执行js语句"""
+        self.logger.info(f'执行js语句: {js}, 以实现{screenMark}功能')
+        try:
+            self.driver.execute(js, params)
+        except:
+            self.logger.info(f'执行js语句失败: {js}')
+            raise
+
+    def is_displayed(self, loc, screenMark=None) -> bool:
+        """判断元素是否展示"""
+        try:
+            self.driver.find_element(loc, screenMark).is_displayed()
+            self.logger.info(f'{screenMark}可见')
+        except NoSuchElementException:
+            self.logger.info(f'{screenMark}不可见')
+            self.save_webImgs(f'{screenMark}不可见')
+            return False
+        return True
 
