@@ -16,6 +16,13 @@ class SignUpObj(BasePage):
     __cancel_button = (By.ID, 'TANGRAM__PSP_30__confirm_cancel')
 
     def do_signup_fail(self, usr, phone, pwd):
+        """
+        注册失败操作
+        :param usr: 用户名
+        :param phone: 手机号
+        :param pwd: 密码
+        :return: 校验文本
+        """
         self.logger.info("【===开始注册操作===】")
         self.wait_eleVisible(self.__usr_input, screenMark='等待用户名输入框')
         self.clean_input(self.__usr_input, screenMark='清空用户名输入框')

@@ -1,7 +1,10 @@
 import os
 import time
-from framework.common.read_data import read_data
 
+# import faker
+
+from framework.common.read_data import read_data
+from faker import Faker
 
 def aaa():
     cur_path = os.path.dirname(os.path.realpath(__file__))
@@ -24,4 +27,11 @@ def bbb():
 
 
 if __name__ == '__main__':
-    bbb()
+    pass
+    fake = Faker(locale='zh_CN')
+
+    print(fake.name())
+    print(fake.ssn())
+    print(fake.phone_number())
+    print(fake.province())
+    print(fake.city())
