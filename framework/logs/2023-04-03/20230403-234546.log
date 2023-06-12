@@ -1,0 +1,289 @@
+2023-04-03 23:45:46,038 - INFO run.py [line:32]: RunCase执行用例--开始
+2023-04-03 23:45:46,157 - INFO read_data.py [line:24]: 加载 /Users/yoga/学习/练手/UI自动化框架模板/framework/config/setting.json 文件......
+2023-04-03 23:45:46,160 - INFO read_data.py [line:27]: 读到数据 ==>>  {'browser_type': 'chrome', 'host': 'https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F', 'username': 'yoga', 'pwd': 'yoga'} 
+2023-04-03 23:45:46,170 - INFO test_signup.py [line:15]: signup_data is [['Register_abnormal001', '密码少于8位', 'yogachuan', '17810200310', 'y123456', '不符合要求'], ['Register_abnormal002', '密码大于14位', 'yogachuan', '17810200310', 'y123456789yyyyy', '不符合要求'], ['Register_abnormal003', '密码纯数字', 'yogachuan', '17810200310', '123456789', '不符合要求'], ['Register_abnormal004', '密码纯字母', 'yogachuan', '17810200310', 'abcdefg', '不符合要求'], ['Register_abnormal005', '密码纯符号', 'yogachuan', '17810200310', '，，，，，，，，', '不符合要求'], ['Register_abnormal005', '密码纯符号', 'yogachuan', '17810200310', '。。。。。。。。', '不符合要求'], ['Register_abnormal005', '密码纯符号', 'yogachuan', '17810200310', '、、、、、、、、', '不符合要求'], ['Register_abnormal005', '密码纯符号', 'yogachuan', '17810200310', '；；；；；；；；', '不符合要求'], ['Register_abnormal006', '密码带空格', 'yogachuan', '17810200310', 'y123 456789', '不符合要求'], ['Register_abnormal007', '密码带中文', 'yogachuan', '17810200310', 'y12345678哈', '不符合要求']]
+2023-04-03 23:45:46,185 - INFO test_signup.py [line:19]: class setup content
+2023-04-03 23:45:49,946 - INFO driver.py [line:49]: 打开链接: https://passport.baidu.com/v2/?reg&tt=1668347090908&overseas=undefined&gid=5D882F4-5ABB-4058-8BD4-6E7CE0ECA9BC&tpl=mn&u=https%3A%2F%2Fwww.baidu.com%2F...
+2023-04-03 23:45:49,946 - INFO driver.py [line:50]: WebDriver 初始化完成！
+2023-04-03 23:45:49,947 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:45:49,947 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal001,用例说明:密码少于8位
+2023-04-03 23:45:49,947 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:45:49,947 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:49,959 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.012495
+2023-04-03 23:45:49,959 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:49,962 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:49,974 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:49,977 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:50,042 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:50,053 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.010375
+2023-04-03 23:45:50,053 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:50,055 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:50,070 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:50,073 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:50,097 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:50,106 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.009393
+2023-04-03 23:45:50,106 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:50,109 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:50,123 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:50,129 - INFO basepage.py [line:76]: 在"输入密码"输入"y123456",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:50,178 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:50,185 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:50,256 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:50,264 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:50,279 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:51,283 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:45:51,283 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:45:51,283 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:45:51,283 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal002,用例说明:密码大于14位
+2023-04-03 23:45:51,283 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:45:51,283 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:51,291 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.007514
+2023-04-03 23:45:51,291 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:51,294 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:51,314 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:51,318 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:51,372 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:51,381 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.008654
+2023-04-03 23:45:51,381 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:51,385 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:51,407 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:51,410 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:51,465 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:51,473 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.008018
+2023-04-03 23:45:51,474 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:51,477 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:51,508 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:51,512 - INFO basepage.py [line:76]: 在"输入密码"输入"y123456789yyyyy",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:51,570 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:51,575 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:51,618 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:51,622 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:51,625 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:52,630 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:45:52,631 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:45:52,631 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:45:52,631 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal003,用例说明:密码纯数字
+2023-04-03 23:45:52,631 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:45:52,631 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:54,712 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:02.080960
+2023-04-03 23:45:54,712 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:54,715 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:54,734 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:54,738 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:54,763 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:54,772 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.008738
+2023-04-03 23:45:54,772 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:54,775 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:54,797 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:54,800 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:54,826 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:54,833 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.007582
+2023-04-03 23:45:54,833 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:54,836 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:54,864 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:54,866 - INFO basepage.py [line:76]: 在"输入密码"输入"123456789",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:54,892 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:54,895 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:54,915 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:54,918 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:54,922 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:55,927 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:45:55,927 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:45:55,927 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:45:55,927 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal004,用例说明:密码纯字母
+2023-04-03 23:45:55,927 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:45:55,927 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:55,935 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.007859
+2023-04-03 23:45:55,935 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:55,939 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:55,959 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:55,964 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:55,997 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:56,011 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.014241
+2023-04-03 23:45:56,012 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:56,015 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:56,039 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:56,042 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:56,071 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:56,080 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.008455
+2023-04-03 23:45:56,080 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:56,083 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:56,106 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:56,109 - INFO basepage.py [line:76]: 在"输入密码"输入"abcdefg",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:56,150 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:56,156 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:56,185 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:56,191 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:56,197 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:57,201 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:45:57,201 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:45:57,201 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:45:57,201 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal005,用例说明:密码纯符号
+2023-04-03 23:45:57,201 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:45:57,201 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:57,209 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.008268
+2023-04-03 23:45:57,210 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:57,213 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:57,232 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:57,236 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:57,266 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:57,282 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.015583
+2023-04-03 23:45:57,282 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:57,287 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:57,313 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:57,318 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:57,358 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:57,384 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.025710
+2023-04-03 23:45:57,385 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:57,408 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:57,475 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:57,489 - INFO basepage.py [line:76]: 在"输入密码"输入"，，，，，，，，",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:57,551 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:57,563 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:57,649 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:57,667 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:57,685 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:58,690 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:45:58,690 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:45:58,690 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:45:58,690 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal005,用例说明:密码纯符号
+2023-04-03 23:45:58,690 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:45:58,690 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:58,700 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.009162
+2023-04-03 23:45:58,700 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:58,704 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:58,726 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:58,730 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:58,753 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:58,761 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.008155
+2023-04-03 23:45:58,761 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:58,763 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:58,786 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:58,788 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:45:58,814 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:58,823 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.008438
+2023-04-03 23:45:58,823 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:58,829 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:58,854 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:58,864 - INFO basepage.py [line:76]: 在"输入密码"输入"。。。。。。。。",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:45:58,887 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:58,890 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:45:58,918 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:58,923 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:58,928 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:45:59,932 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:45:59,933 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:45:59,933 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:45:59,933 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal005,用例说明:密码纯符号
+2023-04-03 23:45:59,933 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:45:59,933 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:59,942 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.008959
+2023-04-03 23:45:59,942 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:59,945 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:59,968 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:45:59,972 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:00,003 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:00,011 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.007232
+2023-04-03 23:46:00,011 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:00,014 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:00,036 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:00,039 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:00,066 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:00,073 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.007179
+2023-04-03 23:46:00,073 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:00,076 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:00,096 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:00,106 - INFO basepage.py [line:76]: 在"输入密码"输入"、、、、、、、、",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:00,127 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:00,131 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:00,152 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:00,155 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:00,159 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:01,164 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:46:01,165 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:46:01,165 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:46:01,165 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal005,用例说明:密码纯符号
+2023-04-03 23:46:01,165 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:46:01,166 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:01,177 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.011758
+2023-04-03 23:46:01,178 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:01,181 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:01,203 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:01,207 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:01,237 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:01,245 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.007909
+2023-04-03 23:46:01,245 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:01,248 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:01,260 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:01,271 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:01,295 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:01,302 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.006923
+2023-04-03 23:46:01,302 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:01,305 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:01,322 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:01,332 - INFO basepage.py [line:76]: 在"输入密码"输入"；；；；；；；；",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:01,355 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:01,358 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:01,376 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:01,381 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:01,387 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:02,391 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:46:02,391 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:46:02,392 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:46:02,392 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal006,用例说明:密码带空格
+2023-04-03 23:46:02,392 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:46:02,392 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:02,406 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.014039
+2023-04-03 23:46:02,406 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:02,411 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:02,440 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:02,445 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:02,475 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:02,483 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.007996
+2023-04-03 23:46:02,483 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:02,489 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:02,515 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:02,518 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:02,541 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:02,548 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.007122
+2023-04-03 23:46:02,548 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:02,550 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:02,568 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:02,578 - INFO basepage.py [line:76]: 在"输入密码"输入"y123 456789",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:02,604 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:02,608 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:02,633 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:02,637 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:02,642 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:03,643 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:46:03,643 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:46:03,643 - INFO test_signup.py [line:30]: function setup content
+2023-04-03 23:46:03,643 - INFO test_signup.py [line:39]: 执行测试用例:Register_abnormal007,用例说明:密码带中文
+2023-04-03 23:46:03,643 - INFO signup_page.py [line:26]: 【===开始注册操作===】
+2023-04-03 23:46:03,643 - INFO basepage.py [line:27]: 等待"等待用户名输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:03,651 - INFO basepage.py [line:32]: 等待"等待用户名输入框"时长:0:00:00.007583
+2023-04-03 23:46:03,651 - INFO basepage.py [line:41]: 查找"清空用户名输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:03,654 - INFO basepage.py [line:89]: 清除"清空用户名输入框",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:03,673 - INFO basepage.py [line:41]: 查找"输入用户名"元素，元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:03,676 - INFO basepage.py [line:76]: 在"输入用户名"输入"yogachuan",元素定位:('id', 'TANGRAM__PSP_4__userName')
+2023-04-03 23:46:03,698 - INFO basepage.py [line:27]: 等待"等待手机号输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:03,705 - INFO basepage.py [line:32]: 等待"等待手机号输入框"时长:0:00:00.006814
+2023-04-03 23:46:03,705 - INFO basepage.py [line:41]: 查找"清空手机号输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:03,708 - INFO basepage.py [line:89]: 清除"清空手机号输入框",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:03,726 - INFO basepage.py [line:41]: 查找"输入手机号"元素，元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:03,730 - INFO basepage.py [line:76]: 在"输入手机号"输入"17810200310",元素定位:('id', 'TANGRAM__PSP_4__phone')
+2023-04-03 23:46:03,753 - INFO basepage.py [line:27]: 等待"等待密码输入框"元素,定位方式:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:03,760 - INFO basepage.py [line:32]: 等待"等待密码输入框"时长:0:00:00.006815
+2023-04-03 23:46:03,760 - INFO basepage.py [line:41]: 查找"清空密码输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:03,763 - INFO basepage.py [line:89]: 清除"清空密码输入框",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:03,786 - INFO basepage.py [line:41]: 查找"输入密码"元素，元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:03,789 - INFO basepage.py [line:76]: 在"输入密码"输入"y12345678哈",元素定位:('id', 'TANGRAM__PSP_4__password')
+2023-04-03 23:46:03,813 - INFO basepage.py [line:41]: 查找"点击注册输入框"元素，元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:03,818 - INFO basepage.py [line:64]: 点击"点击注册输入框",元素定位:('id', 'TANGRAM__PSP_4__verifyCode')
+2023-04-03 23:46:03,837 - INFO basepage.py [line:41]: 查找"获取断言文本"元素，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:03,840 - INFO basepage.py [line:103]: 获取"获取断言文本"元素文本内容，元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:03,843 - INFO basepage.py [line:106]: 获取"获取断言文本"元素文本内容为"密码设置不符合要求",元素定位:('class name', 'pwd-strength-detail')
+2023-04-03 23:46:04,848 - INFO signup_page.py [line:42]: 【===结束注册操作===】
+2023-04-03 23:46:04,848 - INFO test_signup.py [line:34]: function teardown content
+2023-04-03 23:46:04,848 - INFO test_signup.py [line:24]: Class teardown content
+2023-04-03 23:46:04,940 - INFO run.py [line:45]: RunCase执行用例--结束

@@ -1,0 +1,4 @@
+Ui自动化：
+1、做成单例模式，Browser类，并判断是否需要登录，basepage类实例化时需要传入driver，继承basepage类的类实例化时也需要传入driver，teardown函数需要单独调用browser.quit_driver将driver重置为none。
+2、页面对象层，需要测试的操作以do开头，类内部调用的方法及变量以__开头，无需暴露
+
